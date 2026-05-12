@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import CountryItem from "./CountryItem"
 
 export default function Main() {
     const [countries, setCountries] = useState([])
@@ -25,45 +26,21 @@ export default function Main() {
     }, [])
 
     if(loading) {
-        return <h1>Loading</h1>
+        return <h2>Loading countries</h2>
     }
 
     if(error) {
-        return <h1>Error: {error}</h1>
+        return <h2>Error: {error}</h2>
     }
 
     return (
         <main>
-             <h1>Countries</h1>
-
-            {countries.slice(0, 10).map(country => {
-
-                const currencyKeys = country.currencies
-                    ? Object.keys(country.currencies)
-                    : []
-
-                return (
-
-                    <div key={country.name.common}>
-
-                        <h2>{country.name.common}</h2>
-
-                        <p>
-                            <strong>Capital:</strong>
-                            {" "}
-                            {country.capital?.[0]}
-                        </p>
-
-                        <p>
-                            <strong>Currencies:</strong>
-                            {" "}
-                            {currencyKeys.join(", ")}
-                        </p>
-
-                    </div>
-
-                )
-            })}
+          {countries.slice(0, 10).map(country => (
+                <CountryItem 
+                    key={country.name.common}
+                    country={country}
+                />
+            ))}
         </main>
     )
 }
