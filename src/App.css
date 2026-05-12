@@ -1,1 +1,36 @@
+.header {
+    display: flex;
+    align-items: center;
+    height: 65px;
+    background: linear-gradient(90deg, #b0d6d5 1.18%, #212b2e 100%);
+    color: white;
+    padding: 20px;
+}
 
+.header>img {
+    height: 100%;
+    margin-right: 6px;
+}
+
+.header>h1 {
+    margin-right: auto;
+    color: white;
+}
+
+.header>h2 {
+    margin-right: auto;
+    color: white;
+}
+
+.footer {
+    height: 65px;
+    background: linear-gradient(90deg, #0b0b0b 1.18%, #0d1518 100%);
+    color: white;
+    padding: 10px;
+}
+
+.footer>p {
+    font-size: 1.25rem;
+    margin-right: auto;
+    color: white;
+}
